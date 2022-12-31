@@ -5,291 +5,344 @@
     <style>
         body {
             margin: 0px;
-
+        
             background-image: url('Background.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
         }
-
+        
         .header {
             padding-bottom: 3px;
-
+        
             display: flex;
             align-items: center;
             justify-content: center;
-
+        
             color: whitesmoke;
             background-image: linear-gradient(#74838c, #79858b);
         }
-
+        
         #logo {
             flex: 0 0 24px;
         }
-
+        
         #website_title {
             margin: 0px;
-
-
+        
+        
             font-size: 180%;
         }
-
+        
         #objective {
             margin: 0px;
             padding-left: 8px;
-
+        
             font-size: 120%;
         }
-
-
-
+        
+        
+        
         .project_details {
             display: flex;
         }
-
+        
         #project_name {
             padding: 6px 20px 2px 10px;
             margin-left: 3px;
             margin-right: 3px;
-
+        
             font-size: 125%;
             font-weight: bold;
             font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
             border: none;
             outline: none;
-
+        
             background-color: #9da6a8;
             border-radius: 4px;
         }
-
+        
         #project_name_paragraph {
             padding: 0px 20px 0px 10px;
         }
-
+        
         #project_name[contenteditable]{
             color: white;
         }
-
+        
         #project_name[contenteditable]:empty::before {
             content: "Enter Project Title";
             color: white;
         }
-
+        
         #create_new_task_box_button {
             margin: 10px 0px 15px 0px;
             padding: 0px 10px 0px 10px;
-
+        
             background-color: #9da6a8;
             border-radius: 4px;
             color: white;
-
+        
             font-size: 110%;
             border: none;
             outline: none;
         }
-
-
-
+        
+        
+        
         #task_boxes {
             display: flex;
             overflow-x: auto;
         }
-
+        
         .task_box {
             margin-left: 10px;
             margin-bottom: 10px;
-
+        
             flex: 0 0 300px;
             height: 100%;
             background-color: #e3e4e6;
             border-radius: 6px;
-
+        
             overflow-y: auto;
         }
-
+        
         .box_title {
             margin: 5px 0px 0px 5px;
             padding: 10px;
             padding-top: 5px;
             padding-bottom: 5px;
-
+        
             font-size: 120%;
             display: inline-block;
             border: none;
             outline: none;
-
+        
             background-color: #e3e4e6;
             font-weight: bolder;
         }
-
-
-
+        
+        
+        
         .sub_box {
             margin-left: 10px;
             margin-right: 10px;
             margin-bottom: 10px;
-
+        
             flex: 0 0 280px;
             background-color: #ffffff;
             border-radius: 3px;
         }
-
-
-
+        
+        
+        
         .sub_box_title[contenteditable]{
             border: none;
             outline: none;
         }
-
+        
         .sub_box_title_paragraph {
             margin: 0px;
             padding: 8px 5px 5px 10px;
         }
-
+        
         .sub_box_title {
             margin: 0px;
-
+        
             font-size: 110%;
-
+        
             overflow: hidden;
             resize: none;
             border: none;
             outline: none;
             display: block;
         }
-
+        
         .sub_box_title[contenteditable]:empty::before {
             content: "Enter Subtask Name";
             color: gray;
         }
-
-
-
+        
+        
+        
         .add_sub_box_button {
             margin: 10px 10px 10px 10px;
-
+        
             border: none;
             color: grey;
             background-color: #e3e4e6;
         }
-
+        
         .add_sub_box_button:hover {
             color: black;
         }
-
-
-
+        
+        
+        
         .description_button {
             padding-top: 5px;
             margin-right: 10px;
-
+        
             background-color: white;
-
+        
             border: none;
             outline: none;
         }
-
+        
         .description_button:hover {
             border-radius: 16px;
             background-color: #c7c6c6;
         }
-
+        
         .description_unit {
             padding: 0px 10px 10px 8px;
-
+        
             display: flex;
         }
-
+        
         p.sub_box_checklist {
             margin: 5px 0px 0px 0px;
         }
-
+        
         img.sub_box_checklist {
             padding: 5px 5px 0px 5px;
         }
-
-
-
-
-
+        
+        
+        
+        
+        
         .sub_box_description {
             margin: 0px;
-            padding-top: 50px;
-
+            padding-top: 100px;
+        
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-
+        
             display: none;
             position: fixed;
             z-index: 1;
-
+        
             background-color: rgb(0, 0, 0, 0.4);
-
+        
             overflow: hidden;
             resize: none;
             border: none;
             outline: none;
         }
-
+        
         .sub_box_description_content {
             margin: auto;
+            margin-top: 0px;
+            margin-right: 0px;
             padding: 20px 20px 10px 20px;
+        
             width: 40%;
-            height: 60%;
-
-            background-color: #fefefe;
+            height: 469px;
+        
+            overflow-y: auto;
+        
+            background-color: #f3f5f7;
         }
-
-
+        
+        
         .sub_box_description_outer_paragraph {
             margin: 0px;
             padding-left: 30px;
         }
-
+        
         .sub_box_description_paragraph {
-            margin: 0px;
-
+            margin: 0px; 
+            padding: 10px 10px 50px 10px;
+        
             font-size: 100%;
-
+        
             overflow: hidden;
             resize: none;
             border: none;
             outline: none;
             display: block;
+        
+            background-color: white;
+            border-radius: 4px;
         }
-
+        
         .sub_box_description_paragraph[contenteditable]:empty::before {
             content: "Enter Description";
             color: gray;
         }
-
+        
         .sub_box_description_title {
             margin: 10px 0px 10px 10px;
             padding: 0px;
-
+        
             font-size: 150%;
             font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
             display: inline-block;
-
+        
             font-weight: bolder;
         }
-
+        
         .sub_box_description_subtitle {
-            margin: 10px 0px 10px 10px;
+            margin: 0px 0px 10px 10px;
             padding: 0px;
-
+        
             font-size: 110%;
             font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
             display: inline-block;
-
+        
             font-weight: lighter;
         }
-
+        
         .sub_box_description_header {
             margin: 0px;
-            padding: 0px 0px 10px 30px;
+            padding: 5px 0px 10px 14px;
+        
+            font-size: 110%;
+            font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+            font-weight: bold;
+        
+            display: inline-block;
+        }
+        
+        .sub_box_description_image {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .sub_box_description_sidebar {
+            margin: auto;
+            margin-top: 0px;
+            margin-left: 0px;
+        
+            width: 200px;
+            height: 499px;
+        
+            background-color: white;
+            
+        }
+        
+        .sub_box_description_close_button {
+            margin: 10px 20px 0px 0px;
+        
+            float: right;
+            font-size: 2em;
+        
+            font-weight: bolder;
+        }
+        
+        
+        
+        .footer {
+            margin: 0px;
+        
+            position: fixed;
+            color: white;
+        
+            bottom: 0;
+            right: 0;
         }
     </style>
 </head>
@@ -306,15 +359,10 @@
         <button id="create_new_task_box_button">Add a New Task List</button>
     </div>
 
-    <div id="task_boxes">
-        <div class="task_box" id="task_box_1" draggable="true">
-            <input type="text" class="box_title" placeholder="Task List Name" autocomplete="off" size="22" maxlength="22">
-            <div class="sub_box_collection"></div>
-            <button id="add_sub_box_button_1" class="add_sub_box_button" style="margin: 0px 10px 10px 10px;">Add a New Subtask...</button>
-            
-            
-        </div>
-    </div>
+    <!-- Collection of Task Boxes -->
+    <div id="task_boxes"></div>
+
+    <p class="footer">&#169; Copyright Tomodachi 2023</p>
 
     <script>
         if(navigator.userAgentData.mobile){
@@ -335,11 +383,7 @@
             original_source = event.target.id.replace(/[0-9]/g, '');
 
             if(original_source === "task_box_"){
-                for(let i = 0; i < document.getElementsByClassName("task_box").length; i++){
-                    if(event.target.id.replace("task_box_", "") === document.getElementsByClassName("task_box")[i].id.replace("task_box_", "")){
-                        original_pos = i;
-                    }
-                }
+                ev.dataTransfer.setData("text", event.target.id);
             } else if(original_source === "sub_box_"){
                 ev.dataTransfer.setData("text", event.target.id);
             }
@@ -348,7 +392,6 @@
         // Note the difference between the methods of drag and drop, wherein in drop .children is used in combo with getElementById
         // Meanwhile in drag, getElementsByClassName is used. This might break if task box is not the only object in task_boxes.
 
-        const bodyY = document.body.getBoundingClientRect();
         function test(){
             let wrapper = document.getElementById("task_boxes").children;
             let xCoords = [0];
@@ -379,10 +422,23 @@
 
             let bodyRect = document.body.getBoundingClientRect().left;
 
+            let prev_num = 0;
             for(let i = 0; i < wrapper.length; i++){
-                let xPos = wrapper[i].getBoundingClientRect().right - bodyRect;
+                let xPos = (wrapper[i].getBoundingClientRect().right - bodyRect);
+                let xPos_half = Math.round((xPos - prev_num)/2);
+                xCoords.push(xPos_half + prev_num);
                 xCoords.push(xPos);
+                
+                prev_num = xPos;
             }
+
+            let string = "The order of the elements is:";
+            for(let i = 0; i < xCoords.length; i++){
+                string = string.concat(" ", xCoords[i], ",");
+            }
+            string = string.concat(" .");
+
+            alert(string)
         }
 
         updatePositions();
@@ -394,42 +450,47 @@
             let items = document.getElementById("task_boxes").children;
 
             for(let i = 0; i < items.length; i++){
-                order.push(i);
+                order.push(items[i].id.replace(/\D/g,''));
             }
+
+            let string = "The order of the elements is:";
+            for(let i = 0; i < order.length; i++){
+                string = string.concat(" ", order[i], ",");
+            }
+            string = string.concat(" .");
+
+            //alert(string)
         }
 
         updateOrder();
 
         let yCoords = [];
+
+        
         function drop(ev){
             if(original_source === "task_box_"){
-                for(let i = 0; (i + 1) < xCoords.length; i++){
-                    if(event.clientX > xCoords[i] && event.clientX < xCoords[i + 1]){
-                        var new_pos = i;
-                    }
-                }
-
                 let wrapper = document.getElementById("task_boxes");
                 let items = wrapper.children;
-                let elements = document.createDocumentFragment();
 
-                let temp_pos = order[new_pos];
-                order[new_pos] = order[original_pos];
-                order[original_pos] = temp_pos;
+                for(let i = 0; (i + 1) < xCoords.length; i++){
+                    if(event.clientX > xCoords[i] && event.clientX < xCoords[i + 1] && (i + 1) % 2 != 0){
+                        //alert("odd");
+                        let data = ev.dataTransfer.getData("text");
+                        wrapper.insertBefore(document.getElementById(data), items[i]);
+                        console.log(items[i]);
+                        addListeners();
 
-                order.forEach(function(idx){
-                    elements.appendChild(items[idx].cloneNode(true));
-                });
-                
-                wrapper.innerHTML = null;
-                wrapper.appendChild(elements);
-                addListeners();
+                        items = document.getElementById("task_boxes").children;
+                    } 
+                }
             }
             
             if(original_source === "sub_box_"){
-                for(let i = 0; (i + 1) < xCoords.length; i++){
-                    if(event.clientX > xCoords[i] && event.clientX < xCoords[i + 1]){
-                        var wrapper = document.getElementById(`task_box_${(order[i] + 1)}`).children[1];
+                for(let i = 0; (i + 1) * 2 < xCoords.length; i++){
+                    if(event.clientX > xCoords[(i*2)] && event.clientX < xCoords[(i + 1)*2]){
+                        console.log(order[i]);
+
+                        var wrapper = document.getElementById(`task_box_${(order[i])}`).children[1];
                         var items = wrapper.children;
                         var elements = document.createDocumentFragment();
 
@@ -520,16 +581,24 @@
             addListeners();
         }
 
-        let counter = 2;
+        let counter = 1;
         let counter_sub_box = 1;
 
         function addListeners(){
             document.getElementById("create_new_task_box_button").addEventListener("click", addTaskBox);
             for(let i = 0; i < document.getElementsByClassName("task_box").length; i++){
-                document.getElementById(`add_sub_box_button_${i + 1}`).addEventListener("click", addSubBox);
+                try {
+                    document.getElementById(`add_sub_box_button_${i + 1}`).addEventListener("click", addSubBox);
+                } catch(error) {
+                    console.log("Missing Sub Box Index LOL");
+                }
             }
+                
             for(let i = 0; i < document.getElementsByClassName("sub_box").length; i++){
                 document.getElementById(`description_button_${i + 1}`).addEventListener("click", showDescription);
+                document.getElementById(`description_close_button_${i + 1}`).addEventListener("click", () => {
+                    document.getElementById(`sub_box_description_${i + 1}`).style.display = "none";
+                });
             }
         }
 
@@ -586,6 +655,18 @@
             updatePositions();
             updateOrder();
         }
+
+        addTaskBox();
+        document.getElementById("task_boxes").children[0].children[0].value = "TO DO";
+
+        addTaskBox();
+        document.getElementById("task_boxes").children[1].children[0].value = "DOING";
+
+        addTaskBox();
+        document.getElementById("task_boxes").children[2].children[0].value = "DONE";
+
+        //document.getElementById("task_boxes").children[0].remove();
+
 
 
         function addSubBox(event){
@@ -646,6 +727,12 @@
             let sub_box_description_subtitle_textnode = document.createTextNode(`in ${task_box_title}`);
             sub_box_description_subtitle.appendChild(sub_box_description_subtitle_textnode);
 
+
+            let new_description_division = document.createElement("div");
+            let new_description_header_image = document.createElement("img");
+            new_description_header_image.setAttribute("src", "Description.jpg");
+            new_description_header_image.classList.add("sub_box_description_iamge");
+
             let sub_box_description_header = document.createElement("p");
             sub_box_description_header.classList.add("sub_box_description_header");
             let sub_box_description_header_textnode = document.createTextNode(`Description`);
@@ -659,14 +746,30 @@
             //new_description.setAttribute("placeholder", "Add Description...");
             new_description_paragraph.setAttribute("contenteditable", "");
             new_description_outer_paragraph.appendChild(new_description_paragraph);
+
+            new_description_division.appendChild(new_description_header_image);
+            new_description_division.appendChild(sub_box_description_header);
+            new_description_division.appendChild(new_description_outer_paragraph);
+
+
+            let new_description_sidebar = document.createElement("div");
+            new_description_sidebar.classList.add("sub_box_description_sidebar");
+
+            let new_description_close_button = document.createElement("span");
+            new_description_close_button.classList.add("sub_box_description_close_button");
+            new_description_close_button.setAttribute("id", `description_close_button_${counter_sub_box}`);
+            let new_description_close_button_textnode = document.createTextNode('\u00D7');
+            new_description_close_button.appendChild(new_description_close_button_textnode);
+
+            new_description_sidebar.appendChild(new_description_close_button);
             
             new_description_content.appendChild(new_description_title_image);
             new_description_content.appendChild(sub_box_description_title);
             new_description_content.appendChild(sub_box_description_subtitle);
-            new_description_content.appendChild(sub_box_description_header);
-            new_description_content.appendChild(new_description_outer_paragraph);
-
+            new_description_content.appendChild(new_description_division);
+            
             new_description.appendChild(new_description_content);
+            new_description.appendChild(new_description_sidebar);
 
             initial_sub_box.appendChild(new_description);
 
@@ -682,6 +785,9 @@
             event.target.parentElement.children[1].append(initial_sub_box);
 
             document.getElementById(`description_button_${counter_sub_box}`).addEventListener("click", showDescription);
+            document.getElementById(`description_close_button_${counter_sub_box}`).addEventListener("click", () => {
+                document.getElementById(`sub_box_description_${counter_sub_box - 1}`).style.display = "none";
+            });
 
             counter_sub_box += 1;
         }
@@ -699,7 +805,7 @@
 
             let sub_box_description_id = event.target.id.replace(/\D/g,'');
             let sub_box_description = document.getElementById(`sub_box_description_${sub_box_description_id}`);
-            sub_box_description.style.display = "block";
+            sub_box_description.style.display = "flex";
 
             window.addEventListener("click", (event) => {
                 if(event.target == sub_box_description){
