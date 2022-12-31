@@ -4,12 +4,12 @@
     <title>Website Test</title>
     <style>
         body {
+            margin: 0px;
+
             background-image: url('Background.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
-
-            margin: 0px;
         }
 
         .header {
@@ -21,8 +21,6 @@
 
             color: whitesmoke;
             background-image: linear-gradient(#74838c, #79858b);
-
-            height: 100%;
         }
 
         #logo {
@@ -31,7 +29,7 @@
 
         #website_title {
             margin: 0px;
-            padding-left: 8px;
+
 
             font-size: 180%;
         }
@@ -101,7 +99,7 @@
             margin-left: 10px;
             margin-bottom: 10px;
 
-            flex: 0 0 320px;
+            flex: 0 0 300px;
             height: 100%;
             background-color: #e3e4e6;
             border-radius: 6px;
@@ -161,31 +159,11 @@
         }
 
         .sub_box_title[contenteditable]:empty::before {
-            content: "Enter Subtask Title";
+            content: "Enter Subtask Name";
             color: gray;
         }
 
 
-        .sub_box_description_paragraph {
-            margin: 0px;
-            padding: 5px 10px 10px 10px;
-        }
-
-        .sub_box_description {
-            margin: 0px;
-            padding-left: 10px;
-
-            overflow: hidden;
-            resize: none;
-            border: none;
-            outline: none;
-            display: block;
-        }
-
-        .sub_box_description[contenteditable]:empty::before {
-            content: "Enter Task Description";
-            color: gray;
-        }
 
         .add_sub_box_button {
             margin: 10px 10px 10px 10px;
@@ -198,6 +176,8 @@
         .add_sub_box_button:hover {
             color: black;
         }
+
+
 
         .description_button {
             padding-top: 5px;
@@ -228,13 +208,96 @@
             padding: 5px 5px 0px 5px;
         }
 
+
+
+
+
+        .sub_box_description {
+            margin: 0px;
+            padding-top: 50px;
+
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+
+            display: none;
+            position: fixed;
+            z-index: 1;
+
+            background-color: rgb(0, 0, 0, 0.4);
+
+            overflow: hidden;
+            resize: none;
+            border: none;
+            outline: none;
+        }
+
+        .sub_box_description_content {
+            margin: auto;
+            padding: 20px 20px 10px 20px;
+            width: 40%;
+            height: 60%;
+
+            background-color: #fefefe;
+        }
+
+
+        .sub_box_description_outer_paragraph {
+            margin: 0px;
+            padding-left: 30px;
+        }
+
+        .sub_box_description_paragraph {
+            margin: 0px;
+
+            font-size: 100%;
+
+            overflow: hidden;
+            resize: none;
+            border: none;
+            outline: none;
+            display: block;
+        }
+
+        .sub_box_description_paragraph[contenteditable]:empty::before {
+            content: "Enter Description";
+            color: gray;
+        }
+
+        .sub_box_description_title {
+            margin: 10px 0px 10px 10px;
+            padding: 0px;
+
+            font-size: 150%;
+            font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+            display: inline-block;
+
+            font-weight: bolder;
+        }
+
+        .sub_box_description_subtitle {
+            margin: 10px 0px 10px 10px;
+            padding: 0px;
+
+            font-size: 110%;
+            font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+            display: inline-block;
+
+            font-weight: lighter;
+        }
+
+        .sub_box_description_header {
+            margin: 0px;
+            padding: 0px 0px 10px 30px;
+        }
     </style>
 </head>
 
 <body>
     <div class="header">
         <img id="logo" src="Logo.jpg">
-        <h2 id="website_title">Workflow</h2>
+        <h2 id="website_title">orkflow</h2>
         <p id="objective">Organize Tasks and Get Shit Done</p>
     </div>
 
@@ -254,6 +317,12 @@
     </div>
 
     <script>
+        if(navigator.userAgentData.mobile){
+            if(window.innerHeight > window.innerWidth){
+                alert("Portrait");
+            } else alert("Landscape");
+        }
+
         //document.getElementById("rearrange_button").addEventListener("click", test);
 
         function allowDrop(ev){
@@ -451,13 +520,16 @@
             addListeners();
         }
 
-        counter = 2;
-        counter_sub_box = 1;
+        let counter = 2;
+        let counter_sub_box = 1;
 
         function addListeners(){
             document.getElementById("create_new_task_box_button").addEventListener("click", addTaskBox);
             for(let i = 0; i < document.getElementsByClassName("task_box").length; i++){
                 document.getElementById(`add_sub_box_button_${i + 1}`).addEventListener("click", addSubBox);
+            }
+            for(let i = 0; i < document.getElementsByClassName("sub_box").length; i++){
+                document.getElementById(`description_button_${i + 1}`).addEventListener("click", showDescription);
             }
         }
 
@@ -523,26 +595,25 @@
             // Apply CSS styles by making them part of Classes
             initial_sub_box.classList.add("sub_box");
 
-            let sub_box_outer_paragraph = document.createElement("p");
+            let sub_box_initial_title_outer_paragraph = document.createElement("p");
             let sub_box_initial_title = document.createElement("span");
-            sub_box_outer_paragraph.classList.add("sub_box_title_paragraph");
+            sub_box_initial_title_outer_paragraph.classList.add("sub_box_title_paragraph");
             sub_box_initial_title.classList.add("sub_box_title");
             sub_box_initial_title.setAttribute("role", "textbox");
             //new_description.setAttribute("placeholder", "Add Description...");
             sub_box_initial_title.setAttribute("contenteditable", "");
 
-            sub_box_outer_paragraph.appendChild(sub_box_initial_title);
-            initial_sub_box.appendChild(sub_box_outer_paragraph);
+            sub_box_initial_title_outer_paragraph.appendChild(sub_box_initial_title);
+            initial_sub_box.appendChild(sub_box_initial_title_outer_paragraph);
 
             let new_description_unit = document.createElement("div");
             new_description_unit.classList.add("description_unit")
 
             let new_description_button = document.createElement("button");
-
-            new_description_button.setAttribute("id", `description_button_${counter_sub_box}`);
             new_description_button.classList.add("description_button")
 
             let new_description_image = document.createElement("img");
+            new_description_image.setAttribute("id", `description_button_${counter_sub_box}`);
             new_description_image.setAttribute("src", "Description.jpg");
             new_description_image.setAttribute("style", "border-radius: 4px;");
 
@@ -551,20 +622,53 @@
             new_description_unit.appendChild(new_description_button);
 
 
-            let new_checklist_image = document.createElement("img");
-            new_checklist_image.classList.add("sub_box_checklist");
-            new_checklist_image.setAttribute("src", "./Checklist.jpg");
-            new_checklist_image.setAttribute("style", "border-radius: 4px; height: 18px; width: 18px;");
+            let new_description = document.createElement("div");
+            new_description.classList.add("sub_box_description")
+            new_description.setAttribute("id", `sub_box_description_${counter_sub_box}`);
 
-            new_description_unit.appendChild(new_checklist_image);
+            let new_description_content = document.createElement("div");
+            new_description_content.classList.add("sub_box_description_content");
 
-            let new_checklist_text = document.createElement("p");
-            new_checklist_text.classList.add("sub_box_checklist");
-            let new_checklist_text_textnode = document.createTextNode("9/10");
-            new_checklist_text.appendChild(new_checklist_text_textnode);
 
-            new_description_unit.appendChild(new_checklist_text);
+            let new_description_title_image = document.createElement("img");
+            new_description_title_image.setAttribute("src", "Description_Title.jpg");
+
+            let sub_box_description_title = document.createElement("p");
+            sub_box_description_title.classList.add("sub_box_description_title");
+            let sub_box_description_title_textnode = document.createTextNode("(Subtask Title)");
+            sub_box_description_title.appendChild(sub_box_description_title_textnode);
+
+            let task_box_title = event.target.closest(".task_box").children[0].value;
+            if(task_box_title == null) task_box_title = "No Task Box Title";
+
+            let sub_box_description_subtitle = document.createElement("p");
+            sub_box_description_subtitle.classList.add("sub_box_description_subtitle");
+            let sub_box_description_subtitle_textnode = document.createTextNode(`in ${task_box_title}`);
+            sub_box_description_subtitle.appendChild(sub_box_description_subtitle_textnode);
+
+            let sub_box_description_header = document.createElement("p");
+            sub_box_description_header.classList.add("sub_box_description_header");
+            let sub_box_description_header_textnode = document.createTextNode(`Description`);
+            sub_box_description_header.appendChild(sub_box_description_header_textnode);
+
+            let new_description_outer_paragraph = document.createElement("p");
+            let new_description_paragraph = document.createElement("span");
+            new_description_outer_paragraph.classList.add("sub_box_description_outer_paragraph");
+            new_description_paragraph.classList.add("sub_box_description_paragraph");
+            new_description_paragraph.setAttribute("role", "textbox");
+            //new_description.setAttribute("placeholder", "Add Description...");
+            new_description_paragraph.setAttribute("contenteditable", "");
+            new_description_outer_paragraph.appendChild(new_description_paragraph);
             
+            new_description_content.appendChild(new_description_title_image);
+            new_description_content.appendChild(sub_box_description_title);
+            new_description_content.appendChild(sub_box_description_subtitle);
+            new_description_content.appendChild(sub_box_description_header);
+            new_description_content.appendChild(new_description_outer_paragraph);
+
+            new_description.appendChild(new_description_content);
+
+            initial_sub_box.appendChild(new_description);
 
 
             initial_sub_box.appendChild(new_description_unit);
@@ -577,11 +681,31 @@
             
             event.target.parentElement.children[1].append(initial_sub_box);
 
+            document.getElementById(`description_button_${counter_sub_box}`).addEventListener("click", showDescription);
 
             counter_sub_box += 1;
-            creating_sub_box = false;
+        }
 
-            updatePositions();
+        function showDescription(event){
+            // Update Sub Box Title
+            let updated_sub_box_title = event.target.closest(".sub_box").children[0].children[0].textContent;
+            if(updated_sub_box_title === "") updated_sub_box_title = "No Subtask Name";
+            event.target.closest(".sub_box").children[1].children[0].children[1].innerHTML = updated_sub_box_title;
+
+            // Update Task Box Title
+            let updated_task_box_title = event.target.closest(".task_box").children[0].value;
+            if(updated_task_box_title === "") updated_task_box_title = "No Task List Name";
+            event.target.closest(".sub_box").children[1].children[0].children[2].innerHTML = " in " + updated_task_box_title;
+
+            let sub_box_description_id = event.target.id.replace(/\D/g,'');
+            let sub_box_description = document.getElementById(`sub_box_description_${sub_box_description_id}`);
+            sub_box_description.style.display = "block";
+
+            window.addEventListener("click", (event) => {
+                if(event.target == sub_box_description){
+                    sub_box_description.style.display = "none";
+                }
+            });
         }
     </script>
 
