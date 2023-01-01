@@ -119,7 +119,7 @@
             outline: none;
         
             background-color: #e3e4e6;
-            font-weight: bolder;
+            font-weight: bold;
         }
         
         
@@ -132,6 +132,8 @@
             flex: 0 0 280px;
             background-color: #ffffff;
             border-radius: 3px;
+        
+            border-bottom: 3px solid #b8bec9;
         }
         
         
@@ -239,10 +241,10 @@
             margin-right: 0px;
             padding: 20px 20px 10px 20px;
         
-            width: 40%;
+            width: 30%;
             height: 469px;
         
-            overflow-y: auto;
+            overflow: auto;
         
             background-color: #f3f5f7;
         }
@@ -255,7 +257,7 @@
         
         .sub_box_description_paragraph {
             margin: 0px; 
-            padding: 10px 10px 50px 10px;
+            padding: 10px;
         
             font-size: 100%;
         
@@ -265,8 +267,14 @@
             outline: none;
             display: block;
         
-            background-color: white;
+            background-color: #f3f5f7;
             border-radius: 4px;
+        }
+        
+        .sub_box_description_paragraph:focus {
+            padding: 10px 10px 30px 10px;
+        
+            background-color: white;
         }
         
         .sub_box_description_paragraph[contenteditable]:empty::before {
@@ -298,7 +306,7 @@
         
         .sub_box_description_header {
             margin: 0px;
-            padding: 5px 0px 10px 14px;
+            padding: 5px 0px 5px 14px;
         
             font-size: 110%;
             font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
@@ -311,6 +319,101 @@
             margin: 0px;
             padding: 0px;
         }
+        
+        
+        
+        .sub_box_footnote_header {
+            margin: 0px;
+            padding: 0px 0px 15px 14px;
+        
+            font-size: 110%;
+            font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+            font-weight: bold;
+        
+            display: inline-block;
+        }
+        
+        .sub_box_add_footnote_button {
+            margin: 0px 0px 0px 30px;
+        
+            display: block;
+        }
+        
+        
+        .sub_box_footnote_counter {
+            margin: 0px 10px 0px 5px;
+            padding: 0px;
+            
+            text-align: center;
+            float: left;
+        }
+        
+        .sub_box_footnote_outer_paragraph {
+            margin: 0px 0px 0px 15px;
+            padding: 0px;
+        }
+        
+        
+        .sub_box_footnote {
+            margin: 0px;
+            padding: 0px 5px 5px 5px;
+        
+            overflow: hidden;
+            resize: none;
+            border: none;
+            outline: none;
+            display: block;
+        }
+        
+        .sub_box_footnote:focus {
+            background-color: white;
+        }
+        
+        .sub_box_footnote[contenteditable]:empty::before {
+            content: "Enter Footnote";
+            color: gray;
+        }
+        
+        .sub_box_footnote {
+            display: flex;
+        }
+        
+        .sub_box_footnote_text {
+            flex: 1;
+        
+            overflow: hidden;
+            resize: none;
+            border: none;
+            outline: none;
+        }
+        
+        .sub_box_footnote_actions {
+            margin-left: 20px;
+        }
+        
+        .sub_box_footnote_delete_button {
+            margin: 0px;
+        
+            font-size: 150%;
+            color: #f3f5f7;
+        }
+        
+        .sub_box_footnote_delete_button:hover {
+            color: black;
+            font-size: 150%;
+            font-weight: bolder;
+        }
+        
+        
+        
+        
+        
+        .sub_box_footnote_image {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        
         
         .sub_box_description_sidebar {
             margin: auto;
@@ -334,6 +437,74 @@
         }
         
         
+        .sub_box_description_sidebar_add_buttons {
+            margin: 70px 20px 20px 20px;
+        
+            width: 160px;
+        
+            display: block;
+            justify-content: space-around;
+        }
+        
+        
+        .sub_box_description_add_text {
+            margin: 0px;
+            padding: 0px 0px 10px 0px;
+        
+            font-size: 110%;
+            font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+            font-weight: bold;
+        }
+        
+        .sub_box_description_add_labels_button {
+            margin: 0px 0px 10px 0px;
+            padding: 5px 5px 5px 5px;
+        
+            width: 100%;
+            text-align: left;
+        
+            font-size: 90%;
+            font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+            font-weight: bold;
+        }
+        
+        .sub_box_description_add_checklist_button {
+            margin: 0px 0px 10px 0px;
+            padding: 5px 5px 5px 5px;
+        
+            width: 100%;
+            text-align: left;
+        
+            font-size: 90%;
+            font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+            font-weight: bold;
+        }
+        
+        .sub_box_description_add_dates_button {
+            margin: 0px 0px 10px 0px;
+            padding: 5px 5px 5px 5px;
+        
+            width: 100%;
+            text-align: left;
+        
+            font-size: 90%;
+            font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+            font-weight: bold;
+        }
+        
+        .sub_box_description_add_attachments_button {
+            margin: 0px 0px 10px 0px;
+            padding: 5px 5px 5px 5px;
+        
+            width: 100%;
+            text-align: left;
+        
+            font-size: 90%;
+            font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+            font-weight: bold;
+        }
+        
+        
         
         .footer {
             margin: 0px;
@@ -345,6 +516,7 @@
             right: 0;
         }
     </style>
+    <link rel="icon" type="image/x-icon" href="./Logo_Transparent.jpg">
 </head>
 
 <body>
@@ -465,15 +637,16 @@
                 let items = wrapper.children;
 
                 for(let i = 0; (i + 1) < xCoords.length; i++){
-                    if(event.clientX > xCoords[i] && event.clientX < xCoords[i + 1] && (i + 1) % 2 != 0){
+                    if(event.pageX > xCoords[i] && event.pageX < xCoords[i + 1] && (i + 1) % 2 != 0){
                         //alert("odd");
                         let data = ev.dataTransfer.getData("text");
                         wrapper.insertBefore(document.getElementById(data), items[i]);
                         console.log(items[i]);
                         addListeners();
 
-                        items = document.getElementById("task_boxes").children;
-                    } 
+                        updatePositions();
+                        updateOrder();
+                    }
                 }
             }
             
@@ -687,7 +860,7 @@
 
             let new_description_image = document.createElement("img");
             new_description_image.setAttribute("id", `description_button_${counter_sub_box}`);
-            new_description_image.setAttribute("src", "Description.jpg");
+            new_description_image.setAttribute("src", "Description.png");
             new_description_image.setAttribute("style", "border-radius: 4px;");
 
             new_description_button.appendChild(new_description_image);
@@ -704,7 +877,7 @@
 
 
             let new_description_title_image = document.createElement("img");
-            new_description_title_image.setAttribute("src", "Description_Title.jpg");
+            new_description_title_image.setAttribute("src", "Description_Title.png");
 
             let sub_box_description_title = document.createElement("p");
             sub_box_description_title.classList.add("sub_box_description_title");
@@ -719,11 +892,13 @@
             let sub_box_description_subtitle_textnode = document.createTextNode(`in ${task_box_title}`);
             sub_box_description_subtitle.appendChild(sub_box_description_subtitle_textnode);
 
-
+            // Description
             let new_description_division = document.createElement("div");
+            new_description_division.setAttribute("style", "margin: 0px 0px 20px 0px;")
+            
             let new_description_header_image = document.createElement("img");
-            new_description_header_image.setAttribute("src", "Description.jpg");
-            new_description_header_image.classList.add("sub_box_description_iamge");
+            new_description_header_image.setAttribute("src", "Description.png");
+            new_description_header_image.classList.add("sub_box_description_image");
 
             let sub_box_description_header = document.createElement("p");
             sub_box_description_header.classList.add("sub_box_description_header");
@@ -735,7 +910,6 @@
             new_description_outer_paragraph.classList.add("sub_box_description_outer_paragraph");
             new_description_paragraph.classList.add("sub_box_description_paragraph");
             new_description_paragraph.setAttribute("role", "textbox");
-            //new_description.setAttribute("placeholder", "Add Description...");
             new_description_paragraph.setAttribute("contenteditable", "");
             new_description_outer_paragraph.appendChild(new_description_paragraph);
 
@@ -743,9 +917,48 @@
             new_description_division.appendChild(sub_box_description_header);
             new_description_division.appendChild(new_description_outer_paragraph);
 
+            // Footnotes
+            let new_footnote_division = document.createElement("div");
+            
+            let new_description_footnote_image = document.createElement("img");
+            new_description_footnote_image.setAttribute("src", "Footnote.png");
+            new_description_footnote_image.classList.add("sub_box_footnote_image");
+
+            let sub_box_footnote_header = document.createElement("p");
+            sub_box_footnote_header.classList.add("sub_box_footnote_header");
+            let sub_box_footnote_header_textnode = document.createTextNode(`Footnotes`);
+            sub_box_footnote_header.appendChild(sub_box_footnote_header_textnode);
+
+            let new_footnote_collection = document.createElement("div");
+            new_footnote_collection.setAttribute("id", `footnote_collection_${counter_sub_box}`);
+
+            let new_description_add_footnote_button = document.createElement("button");
+            new_description_add_footnote_button.setAttribute("id", `footnote_button_${counter_sub_box}`);
+            new_description_add_footnote_button.classList.add("sub_box_add_footnote_button");
+            let new_description_add_footnote_button_textnode = document.createTextNode("Add Footnote");
+            new_description_add_footnote_button.appendChild(new_description_add_footnote_button_textnode);
+
+            new_footnote_division.appendChild(new_description_footnote_image);
+            new_footnote_division.appendChild(sub_box_footnote_header);
+            new_footnote_division.appendChild(new_footnote_collection);
+            new_footnote_division.appendChild(new_description_add_footnote_button);
+
+            
+            new_description_content.appendChild(new_description_title_image);
+            new_description_content.appendChild(sub_box_description_title);
+            new_description_content.appendChild(sub_box_description_subtitle);
+            new_description_content.appendChild(new_description_division);
+            new_description_content.appendChild(new_footnote_division)
+
+
 
             let new_description_sidebar = document.createElement("div");
             new_description_sidebar.classList.add("sub_box_description_sidebar");
+
+
+            let new_description_sidebar_add_buttons = document.createElement("div");
+            new_description_sidebar_add_buttons.classList.add("sub_box_description_sidebar_add_buttons");
+
 
             let new_description_close_button = document.createElement("span");
             new_description_close_button.classList.add("sub_box_description_close_button");
@@ -753,12 +966,40 @@
             let new_description_close_button_textnode = document.createTextNode('\u00D7');
             new_description_close_button.appendChild(new_description_close_button_textnode);
 
+            let new_description_add_text = document.createElement("p");
+            new_description_add_text.classList.add("sub_box_description_add_text");
+            let new_description_add_text_textnode = document.createTextNode("Add");
+            new_description_add_text.appendChild(new_description_add_text_textnode);
+
+            let new_description_add_labels_button = document.createElement("button");
+            new_description_add_labels_button.classList.add("sub_box_description_add_labels_button");
+            let new_description_add_labels_button_textnode = document.createTextNode("Labels");
+            new_description_add_labels_button.appendChild(new_description_add_labels_button_textnode);
+
+            let new_description_add_checklist_button = document.createElement("button");
+            new_description_add_checklist_button.classList.add("sub_box_description_add_checklist_button");
+            let new_description_add_checklist_button_textnode = document.createTextNode("Checklist");
+            new_description_add_checklist_button.appendChild(new_description_add_checklist_button_textnode);
+
+            let new_description_add_dates_button = document.createElement("button");
+            new_description_add_dates_button.classList.add("sub_box_description_add_dates_button");
+            let new_description_add_dates_button_textnode = document.createTextNode("Dates");
+            new_description_add_dates_button.appendChild(new_description_add_dates_button_textnode);
+
+            let new_description_add_attachments_button = document.createElement("button");
+            new_description_add_attachments_button.classList.add("sub_box_description_add_attachments_button");
+            let new_description_add_attachments_button_textnode = document.createTextNode("Attachments");
+            new_description_add_attachments_button.appendChild(new_description_add_attachments_button_textnode);
+
+            new_description_sidebar_add_buttons.appendChild(new_description_add_text);
+            new_description_sidebar_add_buttons.appendChild(new_description_add_labels_button);
+            new_description_sidebar_add_buttons.appendChild(new_description_add_checklist_button);
+            new_description_sidebar_add_buttons.appendChild(new_description_add_dates_button);
+            new_description_sidebar_add_buttons.appendChild(new_description_add_attachments_button);
+
+
             new_description_sidebar.appendChild(new_description_close_button);
-            
-            new_description_content.appendChild(new_description_title_image);
-            new_description_content.appendChild(sub_box_description_title);
-            new_description_content.appendChild(sub_box_description_subtitle);
-            new_description_content.appendChild(new_description_division);
+            new_description_sidebar.appendChild(new_description_sidebar_add_buttons);
             
             new_description.appendChild(new_description_content);
             new_description.appendChild(new_description_sidebar);
@@ -780,8 +1021,57 @@
             document.getElementById(`description_close_button_${counter_sub_box}`).addEventListener("click", () => {
                 document.getElementById(`sub_box_description_${counter_sub_box - 1}`).style.display = "none";
             });
+            document.getElementById(`footnote_button_${counter_sub_box}`).addEventListener("click", addFootnote);
+            
 
             counter_sub_box += 1;
+        }
+
+        function addFootnote(event){
+            let counter_footnote = document.getElementById(`footnote_collection_${event.target.id.replace(/\D/g,'')}`).children.length + 1;
+
+            let sub_box_id = event.target.id.replace(/\D/g,'');
+            let new_footnote = document.createElement("div");
+            new_footnote.classList.add("sub_box_footnote");
+            new_footnote.setAttribute("id", `sub_box_${sub_box_id}_footnote_${counter_footnote}`);
+            new_footnote.setAttribute("style", "margin: 0px 0px 10px 0px;")
+
+            let new_footnote_text = document.createElement("div");
+            new_footnote_text.classList.add("sub_box_footnote_text");
+
+            let sub_box_footnote_counter = document.createElement("p");
+            sub_box_footnote_counter.classList.add("sub_box_footnote_counter");
+            let sub_box_footnote_counter_textnode = document.createTextNode(`${counter_footnote}.`);
+            sub_box_footnote_counter.appendChild(sub_box_footnote_counter_textnode);
+
+            let sub_box_footnote_outer_paragraph = document.createElement("p");
+            let sub_box_footnote = document.createElement("span");
+            sub_box_footnote_outer_paragraph.classList.add("sub_box_footnote_outer_paragraph");
+            sub_box_footnote.classList.add("sub_box_footnote");
+            sub_box_footnote.setAttribute("role", "textbox");
+            //new_description.setAttribute("placeholder", "Add Description...");
+            sub_box_footnote.setAttribute("contenteditable", "");
+            sub_box_footnote_outer_paragraph.appendChild(sub_box_footnote);
+
+            new_footnote_text.appendChild(sub_box_footnote_counter);
+            new_footnote_text.appendChild(sub_box_footnote_outer_paragraph);
+
+
+            let new_footnote_actions = document.createElement("div");
+            new_footnote_actions.classList.add("sub_box_footnote_actions");
+
+            let new_footnote_delete_button = document.createElement("span");
+            new_footnote_delete_button.classList.add("sub_box_footnote_delete_button");
+            new_footnote_delete_button.setAttribute("id", `sub_box_${sub_box_id}_footnote_delete_button_${counter_footnote}`);
+            let new_footnote_delete_button_textnode = document.createTextNode('\u00D7');
+            new_footnote_delete_button.appendChild(new_footnote_delete_button_textnode);
+
+            new_footnote_actions.appendChild(new_footnote_delete_button);
+
+            new_footnote.appendChild(new_footnote_text);
+            new_footnote.appendChild(new_footnote_actions);
+
+            event.target.parentElement.children[2].appendChild(new_footnote);
         }
 
         function showDescription(event){
