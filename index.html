@@ -5,341 +5,341 @@
     <style>
         body {
             margin: 0px;
-        
+
             background-image: url('Background.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
         }
-        
+
         .header {
             padding-bottom: 3px;
-        
+
             display: flex;
             align-items: center;
             justify-content: center;
-        
+
             color: whitesmoke;
             background-image: linear-gradient(#74838c, #79858b);
         }
-        
+
         #logo {
             flex: 0 0 24px;
         }
-        
+
         #website_title {
             margin: 0px;
-        
-        
+
+
             font-size: 180%;
         }
-        
+
         #objective {
             margin: 0px;
             padding-left: 8px;
-        
+
             font-size: 120%;
         }
-        
-        
-        
+
+
+
         .project_details {
             display: flex;
         }
-        
+
         #project_name {
             padding: 6px 20px 2px 10px;
             margin-left: 3px;
             margin-right: 3px;
-        
+
             font-size: 125%;
             font-weight: bold;
             font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
             border: none;
             outline: none;
-        
+
             background-color: #9da6a8;
             border-radius: 4px;
         }
-        
+
         #project_name_paragraph {
             padding: 0px 20px 0px 10px;
         }
-        
+
         #project_name[contenteditable]{
             color: white;
         }
-        
+
         #project_name[contenteditable]:empty::before {
             content: "Enter Project Title";
             color: white;
         }
-        
+
         #create_new_task_box_button {
             margin: 10px 0px 15px 0px;
             padding: 0px 10px 0px 10px;
-        
+
             background-color: #9da6a8;
             border-radius: 4px;
             color: white;
-        
+
             font-size: 110%;
             border: none;
             outline: none;
         }
-        
-        
-        
+
+
+
         #task_boxes {
             display: flex;
             overflow-x: auto;
         }
-        
+
         .task_box {
             margin-left: 10px;
             margin-bottom: 10px;
-        
+
             flex: 0 0 300px;
             height: 100%;
             background-color: #e3e4e6;
             border-radius: 6px;
-        
+
             overflow-y: auto;
         }
-        
+
         .box_title {
             margin: 5px 0px 0px 5px;
             padding: 10px;
             padding-top: 5px;
             padding-bottom: 5px;
-        
+
             font-size: 120%;
             display: inline-block;
             border: none;
             outline: none;
-        
+
             background-color: #e3e4e6;
             font-weight: bold;
         }
-        
-        
-        
+
+
+
         .sub_box {
             margin-left: 10px;
             margin-right: 10px;
             margin-bottom: 10px;
-        
+
             flex: 0 0 280px;
             background-color: #ffffff;
             border-radius: 3px;
-        
+
             border-bottom: 3px solid #b8bec9;
         }
-        
-        
-        
+
+
+
         .sub_box_title[contenteditable]{
             border: none;
             outline: none;
         }
-        
+
         .sub_box_title_paragraph {
             margin: 0px;
             padding: 8px 5px 5px 10px;
         }
-        
+
         .sub_box_title {
             margin: 0px;
-        
+
             font-size: 110%;
-        
+
             overflow: hidden;
             resize: none;
             border: none;
             outline: none;
             display: block;
         }
-        
+
         .sub_box_title[contenteditable]:empty::before {
             content: "Enter Subtask Name";
             color: gray;
         }
-        
-        
-        
+
+
+
         .add_sub_box_button {
             margin: 10px 10px 10px 10px;
-        
+
             border: none;
             color: grey;
             background-color: #e3e4e6;
         }
-        
+
         .add_sub_box_button:hover {
             color: black;
         }
-        
-        
-        
+
+
+
         .description_button {
             padding-top: 5px;
             margin-right: 10px;
-        
+
             background-color: white;
-        
+
             border: none;
             outline: none;
         }
-        
+
         .description_button:hover {
             border-radius: 16px;
             background-color: #c7c6c6;
         }
-        
+
         .description_unit {
             padding: 0px 10px 10px 8px;
-        
+
             display: flex;
         }
-        
+
         p.sub_box_checklist {
             margin: 5px 0px 0px 0px;
         }
-        
+
         img.sub_box_checklist {
             padding: 5px 5px 0px 5px;
         }
-        
-        
-        
-        
-        
+
+
+
+
+
         .sub_box_description {
             margin: 0px;
             padding-top: 100px;
-        
+
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-        
+
             display: none;
             position: fixed;
             z-index: 1;
-        
+
             background-color: rgb(0, 0, 0, 0.4);
-        
+
             overflow: hidden;
             resize: none;
             border: none;
             outline: none;
         }
-        
+
         .sub_box_description_content {
             margin: auto;
             margin-top: 0px;
             margin-right: 0px;
             padding: 20px 20px 10px 20px;
-        
+
             width: 30%;
             height: 469px;
-        
+
             overflow: auto;
-        
+
             background-color: #f3f5f7;
         }
-        
-        
+
+
         .sub_box_description_outer_paragraph {
             margin: 0px;
             padding-left: 30px;
         }
-        
+
         .sub_box_description_paragraph {
             margin: 0px; 
             padding: 10px;
-        
+
             font-size: 100%;
-        
+
             overflow: hidden;
             resize: none;
             border: none;
             outline: none;
             display: block;
-        
+
             background-color: #f3f5f7;
             border-radius: 4px;
         }
-        
+
         .sub_box_description_paragraph:focus {
             padding: 10px 10px 30px 10px;
-        
+
             background-color: white;
         }
-        
+
         .sub_box_description_paragraph[contenteditable]:empty::before {
             content: "Enter Description";
             color: gray;
         }
-        
+
         .sub_box_description_title {
             margin: 10px 0px 10px 10px;
             padding: 0px;
-        
+
             font-size: 150%;
             font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
             display: inline-block;
-        
+
             font-weight: bolder;
         }
-        
+
         .sub_box_description_subtitle {
             margin: 0px 0px 10px 10px;
             padding: 0px;
-        
+
             font-size: 110%;
             font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
             display: inline-block;
-        
+
             font-weight: lighter;
         }
-        
+
         .sub_box_description_header {
             margin: 0px;
             padding: 5px 0px 5px 14px;
-        
+
             font-size: 110%;
             font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
             font-weight: bold;
-        
+
             display: inline-block;
         }
-        
+
         .sub_box_description_image {
             margin: 0px;
             padding: 0px;
         }
-        
-        
-        
+
+
+
         .sub_box_footnote_header {
             margin: 0px;
             padding: 0px 0px 15px 14px;
-        
+
             font-size: 110%;
             font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
             font-weight: bold;
-        
+
             display: inline-block;
         }
-        
+
         .sub_box_add_footnote_button {
             margin: 0px 0px 0px 30px;
-        
+
             display: block;
         }
-        
-        
+
+
         .sub_box_footnote_counter {
             margin: 0px 10px 0px 5px;
             padding: 0px;
@@ -347,171 +347,171 @@
             text-align: center;
             float: left;
         }
-        
+
         .sub_box_footnote_outer_paragraph {
             margin: 0px 0px 0px 15px;
             padding: 0px;
         }
-        
-        
+
+
         .sub_box_footnote {
             margin: 0px;
             padding: 0px 5px 5px 5px;
-        
+
             overflow: hidden;
             resize: none;
             border: none;
             outline: none;
             display: block;
         }
-        
+
         .sub_box_footnote:focus {
             background-color: white;
         }
-        
+
         .sub_box_footnote[contenteditable]:empty::before {
             content: "Enter Footnote";
             color: gray;
         }
-        
+
         .sub_box_footnote {
             display: flex;
         }
-        
+
         .sub_box_footnote_text {
             flex: 1;
-        
+
             overflow: hidden;
             resize: none;
             border: none;
             outline: none;
         }
-        
+
         .sub_box_footnote_actions {
             margin-left: 20px;
         }
-        
+
         .sub_box_footnote_delete_button {
             margin: 0px;
-        
+
             font-size: 150%;
             color: #f3f5f7;
         }
-        
+
         .sub_box_footnote_delete_button:hover {
             color: black;
             font-size: 150%;
             font-weight: bolder;
         }
-        
-        
-        
-        
-        
+
+
+
+
+
         .sub_box_footnote_image {
             margin: 0px;
             padding: 0px;
         }
-        
-        
-        
+
+
+
         .sub_box_description_sidebar {
             margin: auto;
             margin-top: 0px;
             margin-left: 0px;
-        
+
             width: 200px;
             height: 499px;
-        
+
             background-color: white;
             
         }
-        
+
         .sub_box_description_close_button {
             margin: 10px 20px 0px 0px;
-        
+
             float: right;
             font-size: 2em;
-        
+
             font-weight: bolder;
         }
-        
-        
+
+
         .sub_box_description_sidebar_add_buttons {
             margin: 70px 20px 20px 20px;
-        
+
             width: 160px;
-        
+
             display: block;
             justify-content: space-around;
         }
-        
-        
+
+
         .sub_box_description_add_text {
             margin: 0px;
             padding: 0px 0px 10px 0px;
-        
+
             font-size: 110%;
             font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
             font-weight: bold;
         }
-        
+
         .sub_box_description_add_labels_button {
             margin: 0px 0px 10px 0px;
             padding: 5px 5px 5px 5px;
-        
+
             width: 100%;
             text-align: left;
-        
+
             font-size: 90%;
             font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
             font-weight: bold;
         }
-        
+
         .sub_box_description_add_checklist_button {
             margin: 0px 0px 10px 0px;
             padding: 5px 5px 5px 5px;
-        
+
             width: 100%;
             text-align: left;
-        
+
             font-size: 90%;
             font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
             font-weight: bold;
         }
-        
+
         .sub_box_description_add_dates_button {
             margin: 0px 0px 10px 0px;
             padding: 5px 5px 5px 5px;
-        
+
             width: 100%;
             text-align: left;
-        
+
             font-size: 90%;
             font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
             font-weight: bold;
         }
-        
+
         .sub_box_description_add_attachments_button {
             margin: 0px 0px 10px 0px;
             padding: 5px 5px 5px 5px;
-        
+
             width: 100%;
             text-align: left;
-        
+
             font-size: 90%;
             font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
             font-weight: bold;
         }
-        
-        
-        
+
+
+
         .footer {
             margin: 0px;
-        
+
             position: fixed;
             color: white;
-        
+
             bottom: 0;
             right: 0;
         }
@@ -641,7 +641,7 @@
                         //alert("odd");
                         let data = ev.dataTransfer.getData("text");
                         wrapper.insertBefore(document.getElementById(data), items[i]);
-                        console.log(items[i]);
+                        //console.log(items[i]);
                         addListeners();
 
                         updatePositions();
@@ -653,7 +653,7 @@
             if(original_source === "sub_box_"){
                 for(let i = 0; (i + 1) * 2 < xCoords.length; i++){
                     if(event.clientX > xCoords[(i*2)] && event.clientX < xCoords[(i + 1)*2]){
-                        console.log(order[i]);
+                        //console.log(order[i]);
 
                         var wrapper = document.getElementById(`task_box_${(order[i])}`).children[1];
                         var items = wrapper.children;
@@ -749,6 +749,7 @@
         let counter = 1;
         let counter_sub_box = 1;
 
+        // General Listeners such as when not currently in a description modal.
         function addListeners(){
             document.getElementById("create_new_task_box_button").addEventListener("click", addTaskBox);
             for(let i = 0; i < document.getElementsByClassName("task_box").length; i++){
@@ -1072,6 +1073,29 @@
             new_footnote.appendChild(new_footnote_actions);
 
             event.target.parentElement.children[2].appendChild(new_footnote);
+
+            document.getElementById(`sub_box_${sub_box_id}_footnote_delete_button_${counter_footnote}`).addEventListener("click", deleteFootnote);
+        }
+
+        function deleteFootnote(event){
+            console.log(`${event.target.parentElement.parentElement.parentElement.id}`);
+
+            let collection = event.target.parentElement.parentElement.parentElement;
+            let items = collection.children;
+            let sub_box_id = event.target.parentElement.parentElement.parentElement.id.replace(/\D/g,'');
+
+            document.getElementById(`${event.target.parentElement.parentElement.id}`).remove();
+
+            if(items.length != 0){
+                for(let i = 0; i < items.length; i++){
+                    // Set ID Attribute to proper value
+                    collection.children[i].setAttribute("id", `sub_box_${sub_box_id}_footnote_${(i + 1)}`);
+                    collection.children[i].children[1].children[0].setAttribute("id", `sub_box_${sub_box_id}_footnote_delete_button_${(i + 1)}`);
+
+                    // Change Paragraph
+                    collection.children[i].children[0].children[0].innerHTML = `${(i + 1)}.`;
+                }
+            }
         }
 
         function showDescription(event){
@@ -1088,6 +1112,11 @@
             let sub_box_description_id = event.target.id.replace(/\D/g,'');
             let sub_box_description = document.getElementById(`sub_box_description_${sub_box_description_id}`);
             sub_box_description.style.display = "flex";
+
+            // Event Listeners for Buttons to Close
+            document.getElementById(`description_close_button_${sub_box_description_id}`).addEventListener("click", () => {
+                sub_box_description.style.display = "none";
+            });
 
             window.addEventListener("click", (event) => {
                 if(event.target == sub_box_description){
