@@ -1,0 +1,777 @@
+html, body {
+    margin: 0px;
+
+    height: 100%;
+}
+
+body {
+    background-image: url('Background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.header {
+    padding-bottom: 3px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: whitesmoke;
+    background-image: linear-gradient(#74838c, #79858b);
+}
+
+#logo {
+    flex: 0 0 32px;
+}
+
+#website_title {
+    margin: 0px;
+
+
+    font-size: 180%;
+}
+
+#objective {
+    margin: 0px;
+    padding-left: 8px;
+
+    font-size: 120%;
+}
+
+
+
+.project_details {
+    display: flex;
+}
+
+#project_name {
+    padding: 6px 20px 2px 10px;
+    margin-left: 3px;
+    margin-right: 3px;
+
+    font-size: 125%;
+    font-weight: bold;
+    font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+    border: none;
+    outline: none;
+
+    background-color: #9da6a8;
+    border-radius: 4px;
+}
+
+#project_name_paragraph {
+    padding: 0px 20px 0px 10px;
+}
+
+#project_name[contenteditable]{
+    color: white;
+}
+
+#project_name[contenteditable]:empty::before {
+    content: "Enter Project Title";
+    color: white;
+}
+
+#create_new_task_box_button {
+    margin: 10px 0px 15px 0px;
+    padding: 0px 10px 0px 10px;
+
+    background-color: #9da6a8;
+    border-radius: 4px;
+    color: white;
+
+    font-size: 110%;
+    border: none;
+    outline: none;
+}
+
+
+
+#task_boxes {
+    display: flex;
+    overflow-x: auto;
+}
+
+.task_box {
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+    flex: 0 0 300px;
+    height: 100%;
+    background-color: #e3e4e6;
+    border-radius: 6px;
+
+    overflow: hidden;
+}
+
+.box_title {
+    margin: 5px 0px 0px 5px;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    font-size: 120%;
+    display: inline-block;
+    border: none;
+    outline: none;
+
+    background-color: #e3e4e6;
+    font-weight: bold;
+}
+
+
+
+.sub_box {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+    flex: 0 0 280px;
+    background-color: #ffffff;
+    border-radius: 3px;
+
+    border-bottom: 3px solid #b8bec9;
+}
+
+
+.label_text {
+    margin: 0px;
+
+    font-size: 1em;
+}
+
+.label_one_container {
+    margin: 5px 5px 0px 10px;
+    padding: 2px 5px 2px 5px;
+
+    display: inline-block;
+
+    background: rgba(97, 234, 158, 0.8);
+    border-radius: 4px;
+}
+
+.label_two_container {
+    margin: 5px 5px 5px 5px;
+    padding: 2px 5px 2px 5px;
+
+    display: inline-block;
+
+    background-color: #f5d825;
+    border-radius: 4px;
+}
+
+
+
+.sub_box_title[contenteditable]{
+    border: none;
+    outline: none;
+}
+
+.sub_box_title_paragraph {
+    margin: 0px;
+    padding: 5px 5px 5px 10px;
+}
+
+.sub_box_title {
+    margin: 0px;
+
+    font-size: 110%;
+
+    overflow: hidden;
+    resize: none;
+    border: none;
+    outline: none;
+    display: block;
+}
+
+.sub_box_title[contenteditable]:empty::before {
+    content: "Enter Subtask Name";
+    color: gray;
+}
+
+
+
+.add_sub_box_button {
+    margin: 10px 10px 10px 10px;
+
+    border: none;
+    color: grey;
+    background-color: #e3e4e6;
+}
+
+.add_sub_box_button:hover {
+    color: black;
+}
+
+
+
+.description_button {
+    padding-top: 5px;
+    margin-right: 10px;
+
+    background-color: white;
+
+    border: none;
+    outline: none;
+}
+
+.description_button:hover {
+    border-radius: 16px;
+    background-color: #c7c6c6;
+}
+
+.description_unit {
+    padding: 0px 10px 10px 8px;
+
+    display: flex;
+}
+
+p.sub_box_checklist {
+    margin: 5px 0px 0px 0px;
+}
+
+img.sub_box_checklist {
+    padding: 5px 5px 0px 5px;
+}
+
+
+
+
+
+.sub_box_description {
+    margin: 0px;
+    padding-top: 42px;
+
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    display: none;
+    position: fixed;
+    z-index: 1;
+
+    background-color: rgb(0, 0, 0, 0.4);
+
+    overflow: hidden;
+    resize: none;
+    border: none;
+    outline: none;
+}
+
+.sub_box_description_content {
+    margin: auto;
+    margin-top: 0px;
+    margin-right: 0px;
+    padding: 20px 20px 10px 20px;
+
+    width: 35%;
+    height: 600px;
+
+    overflow: auto;
+
+    border-radius: 8px;
+    background-color: #f3f5f7;
+}
+
+
+.sub_box_description_outer_paragraph {
+    margin: 0px;
+    padding-left: 30px;
+}
+
+.sub_box_description_paragraph {
+    margin: 0px; 
+    padding: 10px;
+
+    font-size: 100%;
+
+    overflow: hidden;
+    resize: none;
+    border: none;
+    outline: none;
+    display: block;
+
+    background-color: #f3f5f7;
+    border-radius: 4px;
+}
+
+.sub_box_description_paragraph:focus {
+    padding: 10px 10px 30px 10px;
+
+    background-color: white;
+}
+
+.sub_box_description_paragraph[contenteditable]:empty::before {
+    content: "Enter Description";
+    color: gray;
+}
+
+.sub_box_description_title {
+    margin: 10px 0px 10px 10px;
+    padding: 0px;
+
+    font-size: 150%;
+    font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+    display: inline-block;
+
+    font-weight: bolder;
+}
+
+.sub_box_description_subtitle {
+    margin: 0px 0px 10px 10px;
+    padding: 0px;
+
+    font-size: 110%;
+    font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+    display: inline-block;
+
+    font-weight: lighter;
+}
+
+.sub_box_description_header {
+    margin: 0px;
+    padding: 5px 0px 5px 30px;
+
+    font-size: 110%;
+    font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+    font-weight: bold;
+
+    display: inline-block;
+}
+
+
+
+.sub_box_footnote_header {
+    margin: 0px;
+    padding: 0px 0px 15px 14px;
+
+    font-size: 110%;
+    font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+    font-weight: bold;
+
+    display: inline-block;
+}
+
+.sub_box_add_footnote_button {
+    margin: 0px 0px 0px 30px;
+
+    display: block;
+}
+
+
+.sub_box_footnote_counter {
+    margin: 0px 10px 0px 5px;
+    padding: 0px;
+    
+    text-align: center;
+    float: left;
+}
+
+.sub_box_footnote_outer_paragraph {
+    margin: 0px 0px 0px 15px;
+    padding: 0px;
+}
+
+
+.sub_box_footnote {
+    margin: 0px;
+    padding: 0px 5px 5px 5px;
+
+    overflow: hidden;
+    resize: none;
+    border: none;
+    outline: none;
+    display: block;
+}
+
+.sub_box_footnote:focus {
+    background-color: white;
+}
+
+.sub_box_footnote[contenteditable]:empty::before {
+    content: "Enter Footnote";
+    color: gray;
+}
+
+.sub_box_footnote {
+    display: flex;
+}
+
+.sub_box_footnote_text {
+    flex: 1;
+
+    overflow: hidden;
+    resize: none;
+    border: none;
+    outline: none;
+}
+
+.sub_box_footnote_actions {
+    margin: 0px 10px 0px 10px;
+}
+
+.sub_box_footnote_delete_button {
+    margin: 0px;
+
+    cursor: pointer;
+
+    font-size: 150%;
+    color: #f3f5f7;
+}
+
+.sub_box_footnote_delete_button:hover {
+    color: black;
+    font-size: 150%;
+    font-weight: bolder;
+}
+
+
+
+.sub_box_labels_header {
+    margin: 0px;
+    padding: 0px 0px 0px 30px;
+}
+
+
+
+
+.sub_box_footnote_image {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+.sub_box_description_sidebar {
+    margin: auto;
+    margin-top: 0px;
+    margin-left: 0px;
+
+    width: 180px;
+    height: 630px;
+
+    transform: translateX(-16px);
+
+    border-radius: 8px;
+    background-color: white;
+}
+
+.sub_box_description_close_button {
+    margin: 10px 20px 0px 0px;
+
+    float: right;
+    font-size: 2em;
+
+    cursor: pointer;
+
+    font-weight: bolder;
+}
+
+
+.sub_box_description_sidebar_add_buttons {
+    margin: 70px 20px 20px 20px;
+
+    width: 140px;
+
+    display: block;
+    justify-content: space-around;
+}
+
+
+.sub_box_description_add_text {
+    margin: 0px;
+    padding: 0px 0px 10px 0px;
+
+    font-size: 110%;
+    font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+    font-weight: bold;
+}
+
+.sub_box_description_add_labels_button {
+    margin: 0px 0px 8px 0px;
+    padding: 5px 5px 5px 5px;
+
+    width: 100%;
+    text-align: left;
+
+    font-size: 90%;
+    font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 2px;
+    border-bottom: 2px solid #b8bec9;
+}
+
+.sub_box_description_add_labels_button:hover {
+    margin: 0px 0px 10px 0px;
+
+    background-color: #b8bec9;
+    color: white;
+
+    border: none;
+}
+
+.sub_box_label_popup {
+    margin: 133px 0px 0px 20px;
+    padding: 8px;
+
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 300px;
+
+    display: none;
+    position: fixed;
+    z-index: 2;
+
+    background-color: white;
+    
+    border-radius: 4px;
+    border: 2px solid #e0dee0;
+}
+
+.sub_box_label_text {
+    margin: 0px;
+    display: inline-block;
+}
+
+.sub_box_description_label_close_button {
+    margin: 0px 7px 0px 0px;
+
+    font-size: 1.2em;
+    font-weight: bolder;
+
+    cursor: pointer;
+
+    float: right;
+}
+
+
+.sub_box_label_one {
+    margin: 0px 0px 5px 0px;
+    padding: 5px;
+
+    width: 80%;
+
+    border-radius: 4px;
+
+    color: white;
+    background-color: #34b47c;
+}
+
+.sub_box_label_one:hover {
+    width: 90%;
+}
+
+
+.sub_box_label_two {
+    margin: 0px;
+    padding: 5px;
+
+    width: 80%;
+
+    border-radius: 4px;
+
+    color: white;
+    background-color: #dcdd4e;
+}
+
+.sub_box_label_two:hover {
+    width: 90%;
+}
+
+
+
+.sub_box_label_container {
+    display: block;
+}
+
+.sub_box_description_label_checklist_box {
+    margin: 0px 0px 0px 3px;
+
+    height: 16px;
+    width: 16px;
+
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.sub_box_description_label_checklist_checkmark {
+    margin: 2px 3px 3px 6px;
+
+    height: 10px;
+    width: 5px;
+
+    border: solid white;
+    border-width: 0px 3px 3px 0px;
+
+    transform: rotate(45deg);
+    position: absolute;
+    display: none;
+}
+
+.sub_box_description_label_checklist_checkmark:hover {
+    cursor: pointer;
+}
+
+.sub_box_description_label_checklist_box:checked ~ .sub_box_description_label_checklist_checkmark {
+    display: block;
+}
+
+
+
+
+
+.sub_box_label_text {
+    margin: 0px;
+
+    color: white;
+    background-color: inherit;
+
+    overflow: hidden;
+    resize: none;
+    border: none;
+    outline: none;
+}
+
+.sub_box_label_input {
+    margin: 0px 0px 0px 20px;
+
+    font-size: 110%;
+
+    color: white;
+    background-color: inherit;
+
+    overflow: hidden;
+    resize: none;
+    border: none;
+    outline: none;
+}
+
+.sub_box_label_input::placeholder {
+    color: white;
+}
+
+
+
+
+.sub_box_description_add_checklist_button {
+    margin: 0px 0px 8px 0px;
+    padding: 5px 5px 5px 5px;
+
+    width: 100%;
+    text-align: left;
+
+    font-size: 90%;
+    font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 2px;
+    border-bottom: 2px solid #b8bec9;
+}
+
+.sub_box_description_add_checklist_button:hover {
+    margin: 0px 0px 10px 0px;
+
+    background-color: #b8bec9;
+    color: white;
+
+    border: none;
+}
+
+
+
+.sub_box_description_add_dates_button {
+    margin: 0px 0px 8px 0px;
+    padding: 5px 5px 5px 5px;
+
+    width: 100%;
+    text-align: left;
+
+    font-size: 90%;
+    font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 2px;
+    border-bottom: 2px solid #b8bec9;
+}
+
+.sub_box_description_add_dates_button:hover {
+    margin: 0px 0px 10px 0px;
+
+    background-color: #b8bec9;
+    color: white;
+
+    border: none;
+}
+
+
+
+.sub_box_description_add_attachments_button {
+    margin: 0px 0px 80px 0px;
+    padding: 5px 5px 5px 5px;
+
+    width: 100%;
+    text-align: left;
+
+    font-size: 90%;
+    font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 2px;
+    border-bottom: 2px solid #b8bec9;
+}
+
+.sub_box_description_add_attachments_button:hover {
+    margin: 0px 0px 10px 0px;
+
+    background-color: #b8bec9;
+    color: white;
+
+    border: none;
+}
+
+
+.sub_box_sidebar_popups {
+    margin: 0px;
+}
+
+
+
+.footer {
+    margin: 0px;
+
+    position: fixed;
+    color: white;
+
+    bottom: 0;
+    right: 0;
+}
+
+@keyframes retract {
+    0% {transform: scaleY(1); transform-origin: top;}
+    25% {transform: scaleY(0.8); transform-origin: top;}
+    50% {transform: scaleY(0.6); transform-origin: top;}
+    75% {transform: scaleY(0.4); transform-origin: top;}
+    100% {transform: scaleY(0.2); transform-origin: top;}
+}
+
+@keyframes show {
+    0% {transform: scaleY(1.4); transform-origin: top;}
+    25% {transform: scaleY(1.8); transform-origin: top;}
+    50% {transform: scaleY(2.2); transform-origin: top;}
+    75% {transform: scaleY(2.4); transform-origin: top;}
+    100% {transform: scaleY(2.5); transform-origin: top;}
+}
