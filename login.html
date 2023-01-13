@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Money Game</title>
+    <link rel="stylesheet" href="./css/login.css"> 
+</head>
+
+<body>
+    <div class="header">
+        <p id="title">Money Game</p>
+        <p id="subtitle">Do you want money? Then this is the game for you</p>
+    </div>
+
+    <div class="login_prompt">
+        <div id="username_input">
+            <label id="username_text">Enter a Username: </label>
+            <input type="text">
+            <button>Check if available</button><br />
+        </div>
+        
+
+        <p class="payment_text">To play this game, a fee must be collected.</p>
+        <p class="payment_text">However, one can pay this expense later with the money earned in the game.</p>
+
+        <p id="payment_option_text">Select a payment method: </p>
+        <form class="payment_options">
+            <input type="radio" id="payment_option" name="choice" value="pay">
+            <label for="payment_option">Payment</label><br />
+            <input type="radio" id="debt_option" name="choice" value="debt">
+            <label for="debt_option">Pay later</label><br />
+        </form>
+        
+        <button id="create_new_task_box_button">Play</button>
+    </div>
+
+    <!-- Collection of Task Boxes -->
+    <div id="task_boxes"></div>
+
+    <p id="footer">&#169; Copyright Tomodachi 2023</p>
+</body>
+</html>
