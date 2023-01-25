@@ -50,24 +50,25 @@ body {
 
 
 
-.project_details {
-    display: flex;
-
+.project_name {
     align-items: center;
 }
 
 #project_name {
-    padding: 5px 25px 2px 10px;
+    padding: 0px 25px 0px 10px;
     margin-left: 3px;
     margin-right: 3px;
 
     font-size: 125%;
     font-weight: bold;
     font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+
+    color: black;
+
     border: none;
     outline: none;
 
-    color: black;
+    display: block;
 }
 
 #project_name_paragraph {
@@ -76,8 +77,8 @@ body {
 }
 
 
-#project_name[contenteditable]:empty::before {
-    content: "Enter Project Title";
+#project_name:empty::before {
+    content: "Enter task group name";
     color: black;
 }
 
@@ -153,14 +154,15 @@ body {
     display: none;
 }
 
+
 .add_sub_box_title_input_outer_paragraph {
     margin: 0px;
-    padding: 5px 10px 0px 10px;
+    padding: 0px 10px 0px 10px;
 }
 
 .add_sub_box_title_input {
     margin: 0px;
-    padding: 5px 0px 5px 10px;
+    padding: 5px 0px 30px 10px;
 
     overflow: hidden;
     resize: none;
@@ -168,26 +170,45 @@ body {
     outline: none;
     display: block;
 
+    font-size: 1.1em;
+
     background-color: #ffffff;
     border-radius: 2px;
 
     border-bottom: 3px solid #b8bec9;
 }
 
-.add_sub_box_button_prompt {
-    margin: 5px 0px 0px 10px;
+.add_sub_box_title_input[contenteditable]:empty::before {
+    content: "Enter task name";
+    color: gray;
+}
 
-    text-align: center;
+
+.add_sub_box_buttons {
+    margin: 0px 0px 5px 0px;
+
+    display: flex;
+
+    cursor: pointer;
+}
+
+.add_sub_box_button_prompt {
+    margin: 7px 0px 8px 15px;
+
+    float: left;
+    align-items: center;
 }
 
 .dismiss_sub_box_button_prompt {
     margin: 0px 0px 0px 10px;
-    padding: 10px 0px 0px 0px;
+    padding: 0px;
+
+    cursor: pointer;
     
     border: none;
     outline: none;
 
-    font-size: 1.2em;
+    font-size: 1.5em;
 
     background-color: #e3e4e6;
 }
@@ -351,7 +372,7 @@ body {
 }
 
 .sub_box_title_paragraph[contenteditable]:empty::before {
-    content: "Enter Task Name";
+    content: "No Task Name";
     color: gray;
 }
 
@@ -413,7 +434,7 @@ body {
     margin: 3px 5px 0px 5px;
     padding: 0px;
 
-    align-self:  center;
+    align-self: center;
 }
 
 .sub_box_front_footnote_counter {
@@ -698,16 +719,12 @@ body {
 
     border: none;
     border-radius: 2px;
-    border-bottom: 2px solid #b8bec9;
+    border-bottom: 3px solid #b8bec9;
 }
 
 .sub_box_description_add_labels_button:hover {
-    margin: 0px 0px 10px 0px;
-
     background-color: #b8bec9;
     color: white;
-
-    border: none;
 }
 
 .sub_box_label_popup {
@@ -905,16 +922,12 @@ body {
 
     border: none;
     border-radius: 2px;
-    border-bottom: 2px solid #b8bec9;
+    border-bottom: 3px solid #b8bec9;
 }
 
 .sub_box_description_add_checklist_button:hover {
-    margin: 0px 0px 10px 0px;
-
     background-color: #b8bec9;
     color: white;
-
-    border: none;
 }
 
 
@@ -969,6 +982,115 @@ body {
 }
 
 
+.sub_box_description_sidebar_action_buttons{
+    margin: 30px 20px 20px 20px;
+}
+
+.sub_box_description_action_text {
+    margin: 0px;
+    padding: 0px 0px 10px 0px;
+
+    font-size: 110%;
+    font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+    font-weight: bold;
+}
+
+
+.sub_box_description_move_button {
+    margin: 0px 0px 8px 0px;
+    padding: 5px;
+
+    width: 100%;
+    text-align: left;
+
+    font-size: 90%;
+    font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 2px;
+    border-bottom: 3px solid #b8bec9;
+}
+
+.sub_box_description_move_button:hover {
+    background-color: #b8bec9;
+    color: white;
+}
+
+.sub_box_description_copy_button {
+    margin: 0px 0px 8px 0px;
+    padding: 5px;
+
+    width: 100%;
+    text-align: left;
+
+    font-size: 90%;
+    font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 2px;
+    border-bottom: 3px solid #b8bec9;
+}
+
+.sub_box_description_copy_button:hover {
+    background-color: #b8bec9;
+    color: white;
+}
+
+.sub_box_description_convert_button {
+    margin: 0px 0px 8px 0px;
+    padding: 5px;
+
+    width: 100%;
+    text-align: left;
+
+    font-size: 90%;
+    font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 2px;
+    border-bottom: 3px solid #b8bec9;
+}
+
+.sub_box_description_convert_button:hover {
+    background-color: #b8bec9;
+    color: white;
+}
+
+.archive_seperator {
+    margin: 0px;
+    padding: 8px 0px 0px 0px;
+
+    border-top: 2px solid #b8bec9;
+}
+
+.sub_box_description_archive_button {
+    margin: 0px 0px 8px 0px;
+    padding: 5px;
+
+    width: 100%;
+    text-align: left;
+
+    font-size: 90%;
+    font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 2px;
+    border-bottom: 3px solid #b8bec9;
+}
+
+.sub_box_description_archive_button:hover {
+    background-color: #b8bec9;
+    color: white;
+}
+
+
+
+
+
 .sub_box_description_outer_paragraph {
     margin: 0px;
     padding-left: 30px;
@@ -1018,22 +1140,18 @@ body {
 
     border: none;
     border-radius: 2px;
-    border-bottom: 2px solid #b8bec9;
+    border-bottom: 3px solid #b8bec9;
 }
 
 .sub_box_description_add_dates_button:hover {
-    margin: 0px 0px 10px 0px;
-
     background-color: #b8bec9;
     color: white;
-
-    border: none;
 }
 
 
 
 .sub_box_description_add_attachments_button {
-    margin: 0px 0px 80px 0px;
+    margin: 0px 0px 10px 0px;
     padding: 5px 5px 5px 5px;
 
     width: 100%;
@@ -1045,16 +1163,12 @@ body {
 
     border: none;
     border-radius: 2px;
-    border-bottom: 2px solid #b8bec9;
+    border-bottom: 3px solid #b8bec9;
 }
 
 .sub_box_description_add_attachments_button:hover {
-    margin: 0px 0px 10px 0px;
-
     background-color: #b8bec9;
     color: white;
-
-    border: none;
 }
 
 
